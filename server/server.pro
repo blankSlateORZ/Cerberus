@@ -1,16 +1,14 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-01-22T16:48:06
+# Project created by QtCreator 2019-01-22T13:56:47
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT       += network
-QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Server
+TARGET = server
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -28,17 +26,14 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        helper.cpp \
-    server.cpp
+        servercreator.cpp
 
 HEADERS += \
-        helper.h \
-    package.h \
-    server.h
+        servercreator.h \
+    package.h
 
 FORMS += \
-        helper.ui \
-    server.ui
+        servercreator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

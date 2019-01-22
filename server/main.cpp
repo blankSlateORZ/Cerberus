@@ -1,10 +1,10 @@
-#include "helper.h"
+#include "servercreator.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Helper w;
+    ServerCreator w;
     w.show();
 
     return a.exec();

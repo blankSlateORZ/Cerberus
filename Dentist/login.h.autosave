@@ -6,16 +6,17 @@
 #include <QByteArray>
 #include <QTcpSocket>
 #include "package.h"
+#include <QCloseEvent>
 
 namespace Ui {
 class login;
 }
 
 
-struct remember_pwd {
+struct RemPwd {
     bool flag;
-    char id[20];
-    char pwd[20];
+    QString id;
+    QString pwd;
 };
 
 class login : public QMainWindow
@@ -25,11 +26,17 @@ class login : public QMainWindow
 public:
     explicit login(QWidget *parent = nullptr);
     ~login();
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_login_pb_clicked();
+    void readyReadSlot();
 
+    void on_remmPwd_rb_clicked();
+    
 private:
     Ui::login *ui;
+    QTcpSocket *_clientSocket;
+    RemPwd _memo;
 };
 #endif // LOGIN_H
