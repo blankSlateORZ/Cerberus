@@ -31,6 +31,7 @@ login::login(QWidget *parent) :
 login::~login()
 {
     delete ui;
+    delete _clientSocket;
 }
 
 void login::closeEvent(QCloseEvent *event)

@@ -29,12 +29,16 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         helper.cpp \
-    server.cpp
+    server.cpp \
+    sockethandler.cpp \
+    networkhelper.cpp
 
 HEADERS += \
         helper.h \
     package.h \
-    server.h
+    server.h \
+    sockethandler.h \
+    networkhelper.h
 
 FORMS += \
         helper.ui \
