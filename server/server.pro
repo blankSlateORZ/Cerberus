@@ -31,18 +31,27 @@ SOURCES += \
         helper.cpp \
     server.cpp \
     sockethandler.cpp \
-    networkhelper.cpp
+    networkhelper.cpp \
+    dbhelper.cpp \
+    usercreator.cpp \
+    user.cpp \
+    userlist.cpp
 
 HEADERS += \
         helper.h \
     package.h \
     server.h \
     sockethandler.h \
-    networkhelper.h
+    networkhelper.h \
+    dbhelper.h \
+    usercreator.h \
+    user.h \
+    userlist.h
 
 FORMS += \
         helper.ui \
-    server.ui
+    server.ui \
+    usercreator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

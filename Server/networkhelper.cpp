@@ -5,9 +5,7 @@ QMutex NetWorkHelper::mutex;
 
 
 NetWorkHelper::NetWorkHelper()
-{
-
-}
+{ }
 
 
 std::shared_ptr<NetWorkHelper> NetWorkHelper::getInstance()
