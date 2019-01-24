@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -20,7 +20,6 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,23 +28,26 @@ class Ui_Helper
 {
 public:
     QWidget *centralWidget;
-    QVBoxLayout *verticalLayout_3;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
+    QWidget *layoutWidget;
+    QGridLayout *gridLayout;
     QLabel *label;
     QSpacerItem *horizontalSpacer;
     QLineEdit *id_le;
-    QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
     QLineEdit *pwd_le;
-    QHBoxLayout *horizontalLayout_3;
-    QSpacerItem *horizontalSpacer_3;
-    QVBoxLayout *verticalLayout;
-    QSpacerItem *verticalSpacer;
-    QPushButton *pushButton;
-    QSpacerItem *verticalSpacer_2;
+    QLabel *label_3;
+    QSpacerItem *horizontalSpacer_5;
+    QLineEdit *repwd_le;
+    QLabel *label_5;
     QSpacerItem *horizontalSpacer_4;
+    QLineEdit *name_le;
+    QLabel *label_4;
+    QSpacerItem *horizontalSpacer_6;
+    QLineEdit *tel_le;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_7;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,96 +56,104 @@ public:
     {
         if (Helper->objectName().isEmpty())
             Helper->setObjectName(QString::fromUtf8("Helper"));
-        Helper->resize(353, 176);
+        Helper->resize(338, 248);
         centralWidget = new QWidget(Helper);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        verticalLayout_3 = new QVBoxLayout(centralWidget);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(centralWidget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 11, 294, 155));
+        gridLayout = new QGridLayout(layoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
 
-        horizontalLayout->addWidget(label);
+        gridLayout->addWidget(label, 0, 0, 1, 2);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout->addItem(horizontalSpacer);
+        gridLayout->addItem(horizontalSpacer, 0, 2, 1, 1);
 
-        id_le = new QLineEdit(centralWidget);
+        id_le = new QLineEdit(layoutWidget);
         id_le->setObjectName(QString::fromUtf8("id_le"));
 
-        horizontalLayout->addWidget(id_le);
+        gridLayout->addWidget(id_le, 0, 3, 1, 2);
 
-
-        verticalLayout_2->addLayout(horizontalLayout);
-
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(centralWidget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        horizontalLayout_2->addWidget(label_2);
+        gridLayout->addWidget(label_2, 1, 0, 1, 2);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addItem(horizontalSpacer_2);
+        gridLayout->addItem(horizontalSpacer_2, 1, 2, 1, 1);
 
-        pwd_le = new QLineEdit(centralWidget);
+        pwd_le = new QLineEdit(layoutWidget);
         pwd_le->setObjectName(QString::fromUtf8("pwd_le"));
 
-        horizontalLayout_2->addWidget(pwd_le);
+        gridLayout->addWidget(pwd_le, 1, 3, 1, 2);
 
+        label_3 = new QLabel(layoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        verticalLayout_2->addLayout(horizontalLayout_2);
+        gridLayout->addWidget(label_3, 2, 0, 1, 2);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_3->addItem(horizontalSpacer_3);
+        gridLayout->addItem(horizontalSpacer_5, 2, 2, 1, 1);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        repwd_le = new QLineEdit(layoutWidget);
+        repwd_le->setObjectName(QString::fromUtf8("repwd_le"));
 
-        verticalLayout->addItem(verticalSpacer);
+        gridLayout->addWidget(repwd_le, 2, 3, 1, 2);
 
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        label_5 = new QLabel(layoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
 
-        verticalLayout->addWidget(pushButton);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer_2);
-
-
-        horizontalLayout_3->addLayout(verticalLayout);
+        gridLayout->addWidget(label_5, 3, 0, 1, 2);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_3->addItem(horizontalSpacer_4);
+        gridLayout->addItem(horizontalSpacer_4, 3, 2, 1, 1);
 
+        name_le = new QLineEdit(layoutWidget);
+        name_le->setObjectName(QString::fromUtf8("name_le"));
 
-        verticalLayout_2->addLayout(horizontalLayout_3);
+        gridLayout->addWidget(name_le, 3, 3, 1, 2);
 
+        label_4 = new QLabel(layoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        verticalLayout_3->addLayout(verticalLayout_2);
+        gridLayout->addWidget(label_4, 4, 0, 1, 2);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_6, 4, 2, 1, 1);
+
+        tel_le = new QLineEdit(layoutWidget);
+        tel_le->setObjectName(QString::fromUtf8("tel_le"));
+
+        gridLayout->addWidget(tel_le, 4, 3, 1, 2);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_3, 5, 0, 1, 1);
+
+        pushButton = new QPushButton(layoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 5, 1, 1, 3);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(horizontalSpacer_7, 5, 4, 1, 1);
 
         Helper->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Helper);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 353, 23));
+        menuBar->setGeometry(QRect(0, 0, 338, 23));
         Helper->setMenuBar(menuBar);
         mainToolBar = new QToolBar(Helper);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -162,6 +172,9 @@ public:
         Helper->setWindowTitle(QApplication::translate("Helper", "Helper", nullptr));
         label->setText(QApplication::translate("Helper", "\350\256\276\347\275\256\347\256\241\347\220\206\345\221\230\350\264\246\346\210\267", nullptr));
         label_2->setText(QApplication::translate("Helper", "\350\256\276\347\275\256\347\256\241\347\220\206\345\221\230\345\257\206\347\240\201", nullptr));
+        label_3->setText(QApplication::translate("Helper", "\350\256\276\347\275\256\347\256\241\347\220\206\345\221\230\345\257\206\347\240\201", nullptr));
+        label_5->setText(QApplication::translate("Helper", "\350\256\276\347\275\256\347\256\241\347\220\206\345\221\230\345\247\223\345\220\215", nullptr));
+        label_4->setText(QApplication::translate("Helper", "\350\256\276\347\275\256\347\256\241\347\220\206\345\221\230\346\211\213\346\234\272", nullptr));
         pushButton->setText(QApplication::translate("Helper", "\350\256\276\347\275\256", nullptr));
     } // retranslateUi
 

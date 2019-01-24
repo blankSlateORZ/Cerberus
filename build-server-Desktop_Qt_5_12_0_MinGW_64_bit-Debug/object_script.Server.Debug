@@ -1,0 +1,13 @@
+debug/main.o
+debug/helper.o
+debug/server.o
+debug/sockethandler.o
+debug/networkhelper.o
+debug/dbhelper.o
+debug/usercreator.o
+debug/user.o
+debug/userlist.o
+debug/moc_helper.o
+debug/moc_server.o
+debug/moc_sockethandler.o
+debug/moc_usercreator.o

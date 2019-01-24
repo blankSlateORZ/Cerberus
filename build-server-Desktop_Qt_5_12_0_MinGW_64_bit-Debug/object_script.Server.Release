@@ -1,0 +1,13 @@
+release/main.o
+release/helper.o
+release/server.o
+release/sockethandler.o
+release/networkhelper.o
+release/dbhelper.o
+release/usercreator.o
+release/user.o
+release/userlist.o
+release/moc_helper.o
+release/moc_server.o
+release/moc_sockethandler.o
+release/moc_usercreator.o

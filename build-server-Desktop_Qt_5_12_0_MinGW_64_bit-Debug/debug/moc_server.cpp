@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Server_t {
-    QByteArrayData data[12];
-    char stringdata0[127];
+    QByteArrayData data[13];
+    char stringdata0[152];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,12 +42,14 @@ QT_MOC_LITERAL(7, 82, 6), // "socket"
 QT_MOC_LITERAL(8, 89, 7), // "package"
 QT_MOC_LITERAL(9, 97, 4), // "pack"
 QT_MOC_LITERAL(10, 102, 3), // "len"
-QT_MOC_LITERAL(11, 106, 20) // "on_listen_pb_clicked"
+QT_MOC_LITERAL(11, 106, 20), // "on_listen_pb_clicked"
+QT_MOC_LITERAL(12, 127, 24) // "on_new_client_pb_clicked"
 
     },
     "Server\0newConnectionSlot\0\0sendToWindowSlot\0"
     "text\0writeToMainThreadSlot\0QTcpSocket*\0"
-    "socket\0package\0pack\0len\0on_listen_pb_clicked"
+    "socket\0package\0pack\0len\0on_listen_pb_clicked\0"
+    "on_new_client_pb_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +59,7 @@ static const uint qt_meta_data_Server[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,15 +67,17 @@ static const uint qt_meta_data_Server[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
-       3,    1,   35,    2, 0x0a /* Public */,
-       5,    3,   38,    2, 0x0a /* Public */,
-      11,    0,   45,    2, 0x08 /* Private */,
+       1,    0,   39,    2, 0x0a /* Public */,
+       3,    1,   40,    2, 0x0a /* Public */,
+       5,    3,   43,    2, 0x0a /* Public */,
+      11,    0,   50,    2, 0x08 /* Private */,
+      12,    0,   51,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void, 0x80000000 | 6, 0x80000000 | 8, QMetaType::LongLong,    7,    9,   10,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -89,6 +93,7 @@ void Server::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->sendToWindowSlot((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 2: _t->writeToMainThreadSlot((*reinterpret_cast< QTcpSocket*(*)>(_a[1])),(*reinterpret_cast< package(*)>(_a[2])),(*reinterpret_cast< qint64(*)>(_a[3]))); break;
         case 3: _t->on_listen_pb_clicked(); break;
+        case 4: _t->on_new_client_pb_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -134,13 +139,13 @@ int Server::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
