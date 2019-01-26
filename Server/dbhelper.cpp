@@ -2,7 +2,6 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
-#include <array>
 std::shared_ptr<DbHelper> DbHelper::instance = nullptr;
 QMutex DbHelper::mutex;
 
@@ -28,48 +27,40 @@ std::shared_ptr<DbHelper> DbHelper::getInstance()
     }
     return instance;
 }
-
-//bool DbHelper::checkUser(QString id,QString pwd)
-//{
-//    db.open();
-//    QSqlQuery query;
-//    query.prepare("select id, pwd from doctor "
-//                  " where id = :id and pwd = :pwd");
-//    query.bindValue(":id",id);
-//    query.bindValue(":pwd",pwd);
-
-//    bool ret = query.exec();
-//    if(!ret){
-//        qDebug() << query.lastError().text();
-//    }
-
-//    //检测结果集是否存在记录
-//    ret = query.next();
-
-//    db.close();
-//    return ret;
-//}
-
-bool DbHelper::create(QString id, QString pwd, QString name, QString tel, std::array<bool, 5> privilege, bool power)
+bool DbHelper::insertUser(const package &pack)
 {
     db.open();
     QSqlQuery query;
-    query.prepare("insert into doctor(id,pwd,name,tel,head_rb,dent_rb,face_rb,anim_rb,prod_rb,power) "
-                  " values(:id, :pwd,:name,:tel,:head_rb,:face_rb,:anim_rb,:prod_rb,:power)");
-    query.bindValue(":id",id);
-    query.bindValue(":pwd", pwd);
-    query.bindValue(":name",name);
-    query.bindValue(":tel",tel);
-    query.bindValue(":head_rb",privilege[0]);
-    query.bindValue(":dent_rb",privilege[1]);
-    query.bindValue(":face_rb",privilege[2]);
-    query.bindValue(":anim_rb",privilege[3]);
-    query.bindValue(":prod_rb",privilege[4]);
-    query.bindValue(":power",power);
+    query.prepare("insert into user(name, password) "
+                  " values(:name, :pwd)");
+    query.bindValue(":name", pack.id);
+    query.bindValue(":pwd", pack.pwd);
+
     bool ret = query.exec();
     if(!ret){
         qDebug() << query.lastError().text();
     }
+    db.close();
+    return ret;
+}
+
+bool DbHelper::checkUser(const package &pack)
+{
+    db.open();
+    QSqlQuery query;
+    query.prepare("select name, password from user "
+                  " where name = :name and password = :pwd");
+    query.bindValue(":name", pack.id);
+    query.bindValue(":pwd", pack.pwd);
+
+    bool ret = query.exec();
+    if(!ret){
+        qDebug() << query.lastError().text();
+    }
+
+    //检测结果集是否存在记录
+    ret = query.next();
+
     db.close();
     return ret;
 }

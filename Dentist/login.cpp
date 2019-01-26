@@ -48,7 +48,7 @@ void login::closeEvent(QCloseEvent *event)
 
 void login::on_login_pb_clicked()
 {
-    //get line edit text
+    //get line edit test
     QString &&qId = ui->id_le->text();
     QString &&qPwd = ui->pwd_le->text();
 

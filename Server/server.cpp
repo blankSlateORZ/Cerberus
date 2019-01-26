@@ -22,8 +22,7 @@ Server::Server(QString id, QString pwd, QWidget *parent) :
     ui->setupUi(this);
     qRegisterMetaType<package>("package");
     _tcpServer = new QTcpServer(this);
-    _uc = new UserCreator();
-    connect(_tcpServer, SIGNAL(newConnection()),
+    connect(_tcpServer, SIGNAL(newConnection),
             this, SLOT(newConnectionSlot()));
 }
 
@@ -31,7 +30,6 @@ Server::~Server()
 {
     delete ui;
     delete _tcpServer;
-    delete _uc;
 }
 
 void Server::newConnectionSlot()
@@ -53,7 +51,7 @@ void Server::newConnectionSlot()
     shared_ptr<QThread> th = make_shared<QThread>(this);
     sh->moveToThread(th.get());
     th.get()->start();
-
+    \
     connect(clientSocket, SIGNAL(disconnected()),
             sh.get(), SLOT(deleteLater()));
     connect(sh.get(), SIGNAL(destroyed(QObject *)),
@@ -86,9 +84,4 @@ void Server::on_listen_pb_clicked()
     } else {
         ui->listen_te->append("failed");
     }
-}
-
-void Server::on_new_client_pb_clicked()
-{
-    _uc->show();
 }

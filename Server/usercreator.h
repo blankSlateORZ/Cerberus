@@ -2,7 +2,6 @@
 #define USERCREATOR_H
 
 #include <QMainWindow>
-#include "dbhelper.h"
 
 namespace Ui {
 class UserCreator;
@@ -15,8 +14,6 @@ class UserCreator : public QMainWindow
 public:
     explicit UserCreator(QWidget *parent = nullptr);
     ~UserCreator();
-private slots:
-    void on_pushButton_clicked();
 
 private:
     Ui::UserCreator *ui;
