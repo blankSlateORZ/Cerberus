@@ -19,8 +19,8 @@ public:
     static std::shared_ptr<DbHelper> getInstance();
     void createConnection();
     void removeConnection();
-    bool insertUser(const package &pack);
-    bool checkUser(const package &pack);
+//    bool checkUser(QString id, QString pwd);
+    bool create(QString id, QString pwd, QString name, QString tel, std::array<bool,5> privilege,bool power);
 };
 
 #endif // DBHELPER_H

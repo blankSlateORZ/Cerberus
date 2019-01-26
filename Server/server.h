@@ -8,6 +8,7 @@
 #include "package.h"
 #include "sockethandler.h"
 #include "networkhelper.h"
+#include "usercreator.h"
 
 namespace Ui {
 class Server;
@@ -29,11 +30,14 @@ public slots:
 private slots:
     void on_listen_pb_clicked();
 
+    void on_new_client_pb_clicked();
+
 private:
     Ui::Server *ui;
     QString _id;
     QString _pwd;
     QTcpServer *_tcpServer;
+    UserCreator *_uc;
 };
 
 #endif // SERVER_H
