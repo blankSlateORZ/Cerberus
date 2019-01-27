@@ -15,8 +15,9 @@ class User
 {
 public:
     User(QString id, QString pwd, QString name,
-         QString tel, std::array<bool, 5> privilege);
-private:
+         QString tel, std::array<bool, 5> privilege, bool isAdmin = false);
+    User(QString id, QString pwd);
+    bool _isAdmin;
     QString _id;
     QString _pwd;
     QString _name;

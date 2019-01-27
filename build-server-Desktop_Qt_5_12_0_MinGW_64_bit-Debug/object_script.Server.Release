@@ -7,7 +7,10 @@ release/dbhelper.o
 release/usercreator.o
 release/user.o
 release/userlist.o
+release/login.o
+release/userhandler.o
 release/moc_helper.o
 release/moc_server.o
 release/moc_sockethandler.o
 release/moc_usercreator.o
+release/moc_login.o

@@ -14,10 +14,7 @@ std::shared_ptr<NetWorkHelper> NetWorkHelper::getInstance()
     {
         mutex.lock();
         if(!instance)
-        {
-            std::shared_ptr<NetWorkHelper> obj(new NetWorkHelper());
-            instance = obj;
-        }
+            instance = std::shared_ptr<NetWorkHelper>(new NetWorkHelper());
         mutex.unlock();
     }
     return instance;

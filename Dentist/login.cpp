@@ -1,14 +1,21 @@
 #include "login.h"
 #include "ui_login.h"
-#include <QHostAddress>
+//#include <QHostAddress>
 #include <QFile>
 #include <QDebug>
+#include <memory>
+#include "clienthandler.h"
 
 login::login(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::login)
 {
     ui->setupUi(this);
+    ui->pwd_le->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+    ui->login_pb->setShortcut(QKeySequence::InsertParagraphSeparator);
+    ui->login_pb->setShortcut(Qt::Key_Enter);
+    ui->login_pb->setShortcut(Qt::Key_Return);
+
     memset(&_memo, 0, sizeof _memo);
 
     QFile readFile("account.dat");
@@ -21,17 +28,11 @@ login::login(QWidget *parent) :
     }
     //radio button base on flag
     ui->remmPwd_rb->setChecked(_memo.flag);
-
-    _clientSocket = new QTcpSocket(this);
-    _clientSocket->connectToHost(QHostAddress::LocalHost, 10000);
-    connect(this->_clientSocket, SIGNAL(readyRead()),
-            this, SLOT(readyReadSlot()));
 }
 
 login::~login()
 {
     delete ui;
-    delete _clientSocket;
 }
 
 void login::closeEvent(QCloseEvent *event)
@@ -67,12 +68,8 @@ void login::on_login_pb_clicked()
     qstrcpy(packLog.pwd, cPwd);
 
     //write to server
-    _clientSocket->write(reinterpret_cast<const char *>(&packLog), sizeof packLog);
-}
-
-void login::readyReadSlot()
-{
-
+    std::shared_ptr<ClientHandler> instance = ClientHandler::getInstance();
+    instance->writeToServer(packLog);
 }
 
 void login::on_remmPwd_rb_clicked()

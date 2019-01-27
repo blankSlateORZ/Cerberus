@@ -21,6 +21,7 @@ public slots:
     void readyReadSlot();
 private:
     QTcpSocket *_clientSocket;
+    void userLogin(const package& pack);
 };
 
 #endif // SOCKETHANDLER_H

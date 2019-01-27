@@ -30,12 +30,14 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         login.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    clienthandler.cpp
 
 HEADERS += \
         login.h \
     package.h \
-    mainwindow.h
+    mainwindow.h \
+    clienthandler.h
 
 FORMS += \
         login.ui \

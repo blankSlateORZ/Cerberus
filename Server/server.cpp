@@ -3,6 +3,7 @@
 #include <QHostAddress>
 #include <memory>
 #include <QThread>
+#include <QDebug>
 
 using namespace std;
 
@@ -45,21 +46,23 @@ void Server::newConnectionSlot()
     QString addr;
     addr += "ip:" + ip + "\tport:" + port;
     ui->listen_te->append(addr);
-    shared_ptr<SocketHandler> sh = make_shared<SocketHandler>(clientSocket);
-    connect(sh.get(), SIGNAL(sendToWindow(QString)),
+
+    SocketHandler *sh = new SocketHandler(clientSocket);
+    connect(sh, SIGNAL(sendToWindow(QString)),
             this, SLOT(sendToWindowSlot(QString)));
-    connect(sh.get(), SIGNAL(writeToMainThread(QTcpSocket*, package, qint64)),
+    connect(sh, SIGNAL(writeToMainThread(QTcpSocket*, package, qint64)),
             this, SLOT(writeToMainThreadSlot(QTcpSocket*, package, qint64)));
-    shared_ptr<QThread> th = make_shared<QThread>(this);
-    sh->moveToThread(th.get());
-    th.get()->start();
+
+    QThread* th = new QThread(this);
+    sh->moveToThread(th);
+    th->start();
 
     connect(clientSocket, SIGNAL(disconnected()),
-            sh.get(), SLOT(deleteLater()));
-    connect(sh.get(), SIGNAL(destroyed(QObject *)),
-            th.get(), SLOT(terminate()));
+            sh, SLOT(deleteLater()));
+    connect(sh, SIGNAL(destroyed(QObject *)),
+            th, SLOT(terminate()));
     shared_ptr<NetWorkHelper> instance = NetWorkHelper::getInstance();
-    instance.get()->insertClient(sh.get());
+    instance->insertClient(sh);
 }
 
 void Server::sendToWindowSlot(QString text)
@@ -81,11 +84,9 @@ void Server::on_listen_pb_clicked()
         return;
     }
     if(_tcpServer->listen(QHostAddress::LocalHost, 10000))
-    {
         ui->listen_te->append("listening");
-    } else {
+    else
         ui->listen_te->append("failed");
-    }
 }
 
 void Server::on_new_client_pb_clicked()

@@ -1,11 +1,18 @@
 #include "helper.h"
 #include "ui_helper.h"
 #include <QMessageBox>
+#include "user.h"
+#include "userhandler.h"
+
 Helper::Helper(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Helper)
 {
     ui->setupUi(this);
+    ui->id_le->setPlaceholderText(tr("请输入字母加数字组合，不要使用中文空格以及特殊符号"));
+    ui->pwd_le->setPlaceholderText(tr("请输入字母加数字组合，不要使用中文空格以及特殊符号"));
+    ui->pwd_le->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+    ui->rePwd_le->setEchoMode(QLineEdit::PasswordEchoOnEdit);
 }
 
 Helper::~Helper()
@@ -15,25 +22,25 @@ Helper::~Helper()
 
 void Helper::on_pushButton_clicked()
 {
-//    QString &&id = ui->id_le->text();
-//    QString &&pwd = ui->pwd_le->text();
-//    if(id.length() && pwd.length()) {
-//        server = new Server(id, pwd);
-//        this->hide();
-//        server->show();
-//    }
-    bool power = true;
-    std::shared_ptr<DbHelper> instance = DbHelper::getInstance();
-    if (ui->pwd_le->text() == ui->repwd_le->text()) {
+    if (ui->pwd_le->text() == ui->rePwd_le->text()) {
         QString &&id = ui->id_le->text();
         QString &&pwd = ui->pwd_le->text();
         QString &&name = ui->name_le->text();
         QString &&tel = ui->tel_le->text();
+        std::array<bool, 5> privilege{true, true, true, true, true};
+        User user(id, pwd, name, tel, privilege, true);
 
-        std::array<bool, 5> privilege{true,true,true,true,true};
-        bool res =instance.get()->create(id, pwd, name, tel, privilege,power);
+        UserHandler uh;
+        bool &&res = uh.insertUser(user);
         if(!res){
-            QMessageBox::critical(this, "用户创建", "创建失败");
+            QMessageBox::critical(this, "管理员创建", "创建失败");
+        } else {
+            QMessageBox::information(this, "管理员创建", "创建成功");
+            this->close();
         }
+    } else {
+        QMessageBox::critical(this, "管理员创建", "两次密码输入不一样");
+        ui->pwd_le->setText("");
+        ui->rePwd_le->setText("");
     }
 }

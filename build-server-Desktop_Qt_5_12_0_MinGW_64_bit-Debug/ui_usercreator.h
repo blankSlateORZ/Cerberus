@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -19,7 +20,6 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -31,7 +31,6 @@ class Ui_UserCreator
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -55,11 +54,11 @@ public:
     QLineEdit *tel_le;
     QVBoxLayout *verticalLayout;
     QLabel *label_6;
-    QRadioButton *head_rb;
-    QRadioButton *dent_rb;
-    QRadioButton *face_rb;
-    QRadioButton *anim_rb;
-    QRadioButton *prod_rb;
+    QCheckBox *head_cb;
+    QCheckBox *dent_cb;
+    QCheckBox *face_cb;
+    QCheckBox *anim_cb;
+    QCheckBox *prod_cb;
     QPushButton *pushButton;
     QMenuBar *menubar;
     QMenu *menu;
@@ -72,9 +71,7 @@ public:
         UserCreator->resize(291, 358);
         centralwidget = new QWidget(UserCreator);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        verticalLayout_3 = new QVBoxLayout(centralwidget);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2 = new QVBoxLayout(centralwidget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -178,30 +175,30 @@ public:
 
         verticalLayout->addWidget(label_6);
 
-        head_rb = new QRadioButton(centralwidget);
-        head_rb->setObjectName(QString::fromUtf8("head_rb"));
+        head_cb = new QCheckBox(centralwidget);
+        head_cb->setObjectName(QString::fromUtf8("head_cb"));
 
-        verticalLayout->addWidget(head_rb);
+        verticalLayout->addWidget(head_cb);
 
-        dent_rb = new QRadioButton(centralwidget);
-        dent_rb->setObjectName(QString::fromUtf8("dent_rb"));
+        dent_cb = new QCheckBox(centralwidget);
+        dent_cb->setObjectName(QString::fromUtf8("dent_cb"));
 
-        verticalLayout->addWidget(dent_rb);
+        verticalLayout->addWidget(dent_cb);
 
-        face_rb = new QRadioButton(centralwidget);
-        face_rb->setObjectName(QString::fromUtf8("face_rb"));
+        face_cb = new QCheckBox(centralwidget);
+        face_cb->setObjectName(QString::fromUtf8("face_cb"));
 
-        verticalLayout->addWidget(face_rb);
+        verticalLayout->addWidget(face_cb);
 
-        anim_rb = new QRadioButton(centralwidget);
-        anim_rb->setObjectName(QString::fromUtf8("anim_rb"));
+        anim_cb = new QCheckBox(centralwidget);
+        anim_cb->setObjectName(QString::fromUtf8("anim_cb"));
 
-        verticalLayout->addWidget(anim_rb);
+        verticalLayout->addWidget(anim_cb);
 
-        prod_rb = new QRadioButton(centralwidget);
-        prod_rb->setObjectName(QString::fromUtf8("prod_rb"));
+        prod_cb = new QCheckBox(centralwidget);
+        prod_cb->setObjectName(QString::fromUtf8("prod_cb"));
 
-        verticalLayout->addWidget(prod_rb);
+        verticalLayout->addWidget(prod_cb);
 
 
         verticalLayout_2->addLayout(verticalLayout);
@@ -210,9 +207,6 @@ public:
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
         verticalLayout_2->addWidget(pushButton);
-
-
-        verticalLayout_3->addLayout(verticalLayout_2);
 
         UserCreator->setCentralWidget(centralwidget);
         menubar = new QMenuBar(UserCreator);
@@ -241,11 +235,11 @@ public:
         label_4->setText(QApplication::translate("UserCreator", "\345\247\223\345\220\215", nullptr));
         label_5->setText(QApplication::translate("UserCreator", "\347\224\265\350\257\235", nullptr));
         label_6->setText(QApplication::translate("UserCreator", "\351\200\211\346\213\251\346\235\203\351\231\220\357\274\232", nullptr));
-        head_rb->setText(QApplication::translate("UserCreator", "\345\244\264\345\275\261\346\265\213\351\207\217", nullptr));
-        dent_rb->setText(QApplication::translate("UserCreator", "3D\347\211\231\346\250\241", nullptr));
-        face_rb->setText(QApplication::translate("UserCreator", "3D\351\235\242\351\203\250", nullptr));
-        anim_rb->setText(QApplication::translate("UserCreator", "\345\212\250\347\224\273\346\226\271\346\241\210", nullptr));
-        prod_rb->setText(QApplication::translate("UserCreator", "\344\270\213\345\215\225\345\210\266\344\275\234", nullptr));
+        head_cb->setText(QApplication::translate("UserCreator", "\345\244\264\345\275\261\346\265\213\351\207\217", nullptr));
+        dent_cb->setText(QApplication::translate("UserCreator", "3D\347\211\231\346\250\241", nullptr));
+        face_cb->setText(QApplication::translate("UserCreator", "3D\351\235\242\351\203\250", nullptr));
+        anim_cb->setText(QApplication::translate("UserCreator", "\345\212\250\347\224\273\346\226\271\346\241\210", nullptr));
+        prod_cb->setText(QApplication::translate("UserCreator", "\344\270\213\345\215\225\345\210\266\344\275\234", nullptr));
         pushButton->setText(QApplication::translate("UserCreator", "\345\210\233\345\273\272", nullptr));
         menu->setTitle(QApplication::translate("UserCreator", "\345\210\233\345\273\272\347\224\250\346\210\267", nullptr));
     } // retranslateUi

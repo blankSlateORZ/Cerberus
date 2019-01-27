@@ -12,3 +12,12 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_function_lw_currentRowChanged(int currentRow)
+{
+    ui->function_view_sw->setCurrentIndex(currentRow);
+}
+
+
+
+

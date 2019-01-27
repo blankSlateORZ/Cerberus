@@ -35,7 +35,9 @@ SOURCES += \
     dbhelper.cpp \
     usercreator.cpp \
     user.cpp \
-    userlist.cpp
+    userlist.cpp \
+    login.cpp \
+    userhandler.cpp
 
 HEADERS += \
         helper.h \
@@ -46,12 +48,15 @@ HEADERS += \
     dbhelper.h \
     usercreator.h \
     user.h \
-    userlist.h
+    userlist.h \
+    login.h \
+    userhandler.h
 
 FORMS += \
         helper.ui \
     server.ui \
-    usercreator.ui
+    usercreator.ui \
+    login.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,11 +1,14 @@
-#include "helper.h"
+#include "login.h"
 #include <QApplication>
+#include <QPluginLoader>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Helper w;
+    Login w;
     w.show();
 
     return a.exec();
 }
+

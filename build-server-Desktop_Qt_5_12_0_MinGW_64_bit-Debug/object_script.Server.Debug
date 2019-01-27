@@ -7,7 +7,10 @@ debug/dbhelper.o
 debug/usercreator.o
 debug/user.o
 debug/userlist.o
+debug/login.o
+debug/userhandler.o
 debug/moc_helper.o
 debug/moc_server.o
 debug/moc_sockethandler.o
 debug/moc_usercreator.o
+debug/moc_login.o

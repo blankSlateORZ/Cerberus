@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QString>
 #include <QByteArray>
-#include <QTcpSocket>
+//#include <QTcpSocket>
 #include "package.h"
 #include <QCloseEvent>
 
@@ -30,13 +30,11 @@ public:
 
 private slots:
     void on_login_pb_clicked();
-    void readyReadSlot();
 
     void on_remmPwd_rb_clicked();
 
 private:
     Ui::login *ui;
-    QTcpSocket *_clientSocket;
     RemPwd _memo;
 };
 #endif // LOGIN_H

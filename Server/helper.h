@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QString>
-#include "server.h"
 
 namespace Ui {
 class Helper;
@@ -22,7 +21,6 @@ private slots:
 
 private:
     Ui::Helper *ui;
-    Server *server;
 };
 
 #endif // HELPER_H

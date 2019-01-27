@@ -17,7 +17,7 @@ private:
 public:
     static std::shared_ptr<NetWorkHelper> getInstance();
     const QVector<SocketHandler *> &getClients() const;
-    void insertClient(SocketHandler *sh);
+    void insertClient(SocketHandler *);
 };
 
 #endif // NETWORKHELPER_H

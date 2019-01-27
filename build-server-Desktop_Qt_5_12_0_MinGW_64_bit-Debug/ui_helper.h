@@ -38,7 +38,7 @@ public:
     QLineEdit *pwd_le;
     QLabel *label_3;
     QSpacerItem *horizontalSpacer_5;
-    QLineEdit *repwd_le;
+    QLineEdit *rePwd_le;
     QLabel *label_5;
     QSpacerItem *horizontalSpacer_4;
     QLineEdit *name_le;
@@ -104,10 +104,10 @@ public:
 
         gridLayout->addItem(horizontalSpacer_5, 2, 2, 1, 1);
 
-        repwd_le = new QLineEdit(layoutWidget);
-        repwd_le->setObjectName(QString::fromUtf8("repwd_le"));
+        rePwd_le = new QLineEdit(layoutWidget);
+        rePwd_le->setObjectName(QString::fromUtf8("rePwd_le"));
 
-        gridLayout->addWidget(repwd_le, 2, 3, 1, 2);
+        gridLayout->addWidget(rePwd_le, 2, 3, 1, 2);
 
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));

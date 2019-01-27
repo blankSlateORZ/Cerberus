@@ -20,7 +20,7 @@ public:
     void createConnection();
     void removeConnection();
 //    bool checkUser(QString id, QString pwd);
-    bool create(QString id, QString pwd, QString name, QString tel, std::array<bool,5> privilege,bool power);
+//    bool create(QString id, QString pwd, QString name, QString tel, std::array<bool,5> privilege,bool power);
 };
 
 #endif // DBHELPER_H

@@ -15,7 +15,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
@@ -46,7 +45,6 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *login_pb;
     QSpacerItem *horizontalSpacer_3;
-    QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -140,10 +138,6 @@ public:
         verticalLayout_4->addLayout(verticalLayout_3);
 
         login->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(login);
-        menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 424, 23));
-        login->setMenuBar(menuBar);
         mainToolBar = new QToolBar(login);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         login->addToolBar(Qt::TopToolBarArea, mainToolBar);
