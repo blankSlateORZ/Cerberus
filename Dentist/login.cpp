@@ -4,6 +4,8 @@
 #include <QFile>
 #include <QDebug>
 #include <memory>
+#include <QRegExp>
+#include <QValidator>
 #include "clienthandler.h"
 
 login::login(QWidget *parent) :
@@ -11,23 +13,37 @@ login::login(QWidget *parent) :
     ui(new Ui::login)
 {
     ui->setupUi(this);
-    ui->pwd_le->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+    ui->id_le->setMaxLength(19);
+    ui->pwd_le->setMaxLength(19);
+    QRegExp reg("[a-zA-Z0-9]+$");
+    ui->id_le->setValidator(new QRegExpValidator(reg, this));
+    ui->pwd_le->setValidator(new QRegExpValidator(reg, this));
+
+    ui->pwd_le->setEchoMode(QLineEdit::Password);
+
     ui->login_pb->setShortcut(QKeySequence::InsertParagraphSeparator);
     ui->login_pb->setShortcut(Qt::Key_Enter);
     ui->login_pb->setShortcut(Qt::Key_Return);
 
     memset(&_memo, 0, sizeof _memo);
 
-    QFile readFile("account.dat");
-    if(!readFile.open(QIODevice::ReadOnly)){
+    QFile readFile("D:/repository/Dentist/account.dat");
+    if(!readFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         qDebug() << "open file failed";
     } else {
         QDataStream in(&readFile);
         in.readRawData(reinterpret_cast<char *>(&_memo), sizeof _memo);
         readFile.close();
     }
+    qDebug() << _memo.flag;
     //radio button base on flag
     ui->remmPwd_rb->setChecked(_memo.flag);
+    qDebug() << _memo.id <<_memo.pwd;
+    if(ui->remmPwd_rb->isChecked()) {
+        qDebug() << "checked";
+        ui->id_le->setText(_memo.id);
+        ui->pwd_le->setText(_memo.pwd);
+    }
 }
 
 login::~login()
@@ -38,8 +54,9 @@ login::~login()
 void login::closeEvent(QCloseEvent *event)
 {
     if(_memo.flag) {
-        QFile writeFile("account.dat");
-        writeFile.open(QIODevice::WriteOnly);
+        qDebug() << "write" << _memo.id << _memo.pwd;
+        QFile writeFile("D:/repository/Dentist/account.dat");
+        writeFile.open(QIODevice::WriteOnly | QIODevice::Text);
         QDataStream out(&writeFile);
         out.writeRawData(reinterpret_cast<char *>(&_memo), sizeof _memo);
         writeFile.close();
@@ -75,6 +92,7 @@ void login::on_login_pb_clicked()
 void login::on_remmPwd_rb_clicked()
 {
     _memo.flag = ui->remmPwd_rb->isChecked();
-    _memo.id = ui->id_le->text();
-    _memo.pwd = ui->pwd_le->text();
+    if(!_memo.flag) return;
+    qstrcpy(_memo.id, ui->id_le->text().toLatin1().data());
+    qstrcpy(_memo.pwd, ui->pwd_le->text().toLatin1().data());
 }

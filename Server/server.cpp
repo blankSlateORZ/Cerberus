@@ -83,7 +83,7 @@ void Server::on_listen_pb_clicked()
         ui->listen_pb->setEnabled(false);
         return;
     }
-    if(_tcpServer->listen(QHostAddress::LocalHost, 10000))
+    if(_tcpServer->listen(QHostAddress::Any, 10000))
         ui->listen_te->append("listening");
     else
         ui->listen_te->append("failed");

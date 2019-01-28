@@ -1,0 +1,11 @@
+release/main.o
+release/login.o
+release/clienthandler.o
+release/insertpatient.o
+release/admain.o
+release/mainwindow.o
+release/moc_login.o
+release/moc_clienthandler.o
+release/moc_insertpatient.o
+release/moc_admain.o
+release/moc_mainwindow.o

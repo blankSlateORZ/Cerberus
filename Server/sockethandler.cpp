@@ -25,7 +25,7 @@ QTcpSocket *SocketHandler::getSocket()
 }
 
 void SocketHandler::readyReadSlot()
-{
+{qDebug()<< "enter";
     package pack;
     memset(&pack, 0, sizeof pack);
     _clientSocket->read(reinterpret_cast<char *>(&pack), sizeof pack);

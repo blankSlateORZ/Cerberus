@@ -15,8 +15,8 @@ class login;
 
 struct RemPwd {
     bool flag;
-    QString id;
-    QString pwd;
+    char id[20];
+    char pwd[20];
 };
 
 class login : public QMainWindow

@@ -30,17 +30,24 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         login.cpp \
-    mainwindow.cpp \
-    clienthandler.cpp
+    clienthandler.cpp\
+    insertpatient.cpp \
+    admain.cpp \
+    mainwindow.cpp
+
 
 HEADERS += \
         login.h \
     package.h \
-    mainwindow.h \
-    clienthandler.h
+    clienthandler.h\
+    insertpatient.h \
+    admain.h \
+    mainwindow.h
 
 FORMS += \
         login.ui \
+    insertpatient.ui \
+    admain.ui \
     mainwindow.ui
 
 # Default rules for deployment.

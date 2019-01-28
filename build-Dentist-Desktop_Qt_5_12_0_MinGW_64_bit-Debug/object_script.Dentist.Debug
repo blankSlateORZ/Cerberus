@@ -1,0 +1,11 @@
+debug/main.o
+debug/login.o
+debug/clienthandler.o
+debug/insertpatient.o
+debug/admain.o
+debug/mainwindow.o
+debug/moc_login.o
+debug/moc_clienthandler.o
+debug/moc_insertpatient.o
+debug/moc_admain.o
+debug/moc_mainwindow.o
