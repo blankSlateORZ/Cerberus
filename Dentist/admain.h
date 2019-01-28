@@ -12,7 +12,7 @@ class admain : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit admain(QWidget *parent = nullptr);
+    explicit admain(QWidget *parent = 0);
     ~admain();
 
 private slots:

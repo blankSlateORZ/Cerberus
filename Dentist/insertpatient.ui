@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1221</width>
-    <height>1030</height>
+    <width>1161</width>
+    <height>855</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,17 @@
    <widget class="QStackedWidget" name="sw1_patient_funicton">
     <property name="geometry">
      <rect>
-      <x>149</x>
-      <y>60</y>
-      <width>19271</width>
-      <height>681</height>
+      <x>20</x>
+      <y>70</y>
+      <width>1011</width>
+      <height>731</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1300</width>
+      <height>16777215</height>
+     </size>
     </property>
     <property name="currentIndex">
      <number>1</number>
@@ -30,15 +36,15 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>0</y>
-        <width>331</width>
-        <height>431</height>
+        <x>30</x>
+        <y>80</y>
+        <width>251</width>
+        <height>281</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="lineEdit_6">
          <property name="font">
           <font>
            <family>Aharoni</family>
@@ -47,12 +53,21 @@
            <bold>true</bold>
           </font>
          </property>
-         <property name="text">
-          <string>病历号：</string>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_5">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QLabel" name="label_3">
          <property name="font">
           <font>
@@ -67,142 +82,7 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>年龄：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>出生年月：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>电话：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>姓名：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>患者守时：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="label_12">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>患者沟通：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>患者类型：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_10">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>末诊日期：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_9">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>初诊日期：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
+       <item row="6" column="0">
         <widget class="QLabel" name="label_8">
          <property name="font">
           <font>
@@ -217,8 +97,42 @@
          </property>
         </widget>
        </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_7">
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <item>
+          <widget class="QRadioButton" name="rb1_1">
+           <property name="font">
+            <font>
+             <family>Aharoni</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>男</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="rb1_2">
+           <property name="font">
+            <font>
+             <family>Aharoni</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>女</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_11">
          <property name="font">
           <font>
            <family>Aharoni</family>
@@ -228,35 +142,11 @@
           </font>
          </property>
          <property name="text">
-          <string>联系地址：</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
+          <string>患者类型：</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
         <widget class="QLineEdit" name="lineEdit_3">
          <property name="font">
           <font>
@@ -268,8 +158,8 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_4">
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_4">
          <property name="font">
           <font>
            <family>Aharoni</family>
@@ -278,145 +168,12 @@
            <bold>true</bold>
           </font>
          </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="lineEdit_5">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QLineEdit" name="lineEdit_6">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLineEdit" name="lineEdit_7">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QLineEdit" name="lineEdit_9">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QLineEdit" name="lineEdit_10">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
+         <property name="text">
+          <string>电话：</string>
          </property>
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QLineEdit" name="lineEdit_11">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QComboBox" name="comboBox">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <item>
-          <property name="text">
-           <string>A</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>B</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>C</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>D</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QComboBox" name="comboBox_2">
-         <property name="font">
-          <font>
-           <family>Aharoni</family>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <item>
-          <property name="text">
-           <string>a</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>b</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>c</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>d</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="12" column="1">
         <widget class="QComboBox" name="comboBox_3">
          <property name="font">
           <font>
@@ -448,29 +205,237 @@
          </item>
         </widget>
        </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>联系地址：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>出生年月：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_4">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="lineEdit_9">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="lineEdit_7">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>年龄：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_13">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>患者守时：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QComboBox" name="comboBox">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>A</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>B</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>C</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>D</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>a</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>b</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>c</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>d</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>患者沟通：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>Aharoni</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>姓名：</string>
+         </property>
+        </widget>
+       </item>
       </layout>
+     </widget>
+     <widget class="QPushButton" name="pb1_save_basis">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>312</y>
+        <width>121</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Aharoni</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>保存</string>
+      </property>
+     </widget>
+     <widget class="QCalendarWidget" name="calendarWidget">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>100</y>
+        <width>248</width>
+        <height>197</height>
+       </rect>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="page_11">
-     <widget class="QCheckBox" name="checkBox_16">
-      <property name="geometry">
-       <rect>
-        <x>841</x>
-        <y>153</y>
-        <width>71</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>发育不良</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>1</x>
         <y>10</y>
-        <width>1023</width>
+        <width>911</width>
         <height>664</height>
        </rect>
       </property>
@@ -578,28 +543,28 @@
           <widget class="QLineEdit" name="lineEdit_2_2"/>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="rb2_2_1">
            <property name="text">
             <string>乳</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="rb2_2_2">
            <property name="text">
             <string>普</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="rb2_2_3">
            <property name="text">
             <string>恒</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_4">
+          <widget class="QRadioButton" name="rb2_2_4">
            <property name="text">
             <string>牙列</string>
            </property>
@@ -1127,6 +1092,13 @@
           <widget class="QCheckBox" name="checkBox_15">
            <property name="text">
             <string>先天缺失</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_16">
+           <property name="text">
+            <string>发育不良</string>
            </property>
           </widget>
          </item>
@@ -2031,7 +2003,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1221</width>
+     <width>1161</width>
      <height>23</height>
     </rect>
    </property>

@@ -4,10 +4,11 @@
 #include <QMainWindow>
 #include <QString>
 #include <QByteArray>
-//#include <QTcpSocket>
+#include <QTcpSocket>
 #include "package.h"
 #include <QCloseEvent>
-
+#include"mainwindow.h"
+#include"insertpatient.h"
 namespace Ui {
 class login;
 }
@@ -15,8 +16,8 @@ class login;
 
 struct RemPwd {
     bool flag;
-    char id[20];
-    char pwd[20];
+    QString id;
+    QString pwd;
 };
 
 class login : public QMainWindow
@@ -30,11 +31,15 @@ public:
 
 private slots:
     void on_login_pb_clicked();
+    void readyReadSlot();
 
     void on_remmPwd_rb_clicked();
 
 private:
     Ui::login *ui;
+    QTcpSocket *_clientSocket;
     RemPwd _memo;
+    MainWindow *mainui;
+    InsertPatient *patientui;
 };
 #endif // LOGIN_H

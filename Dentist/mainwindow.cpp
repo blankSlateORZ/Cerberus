@@ -63,3 +63,5 @@ void MainWindow::on_pushButton_9_clicked()
 {
     ui->swm_function->setCurrentIndex(8);
 }
+
+
